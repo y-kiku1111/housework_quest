@@ -1,22 +1,25 @@
-= form_for @quest do |f|
-  - if @quest.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@quest.errors.count, "error")} prohibited this quest from being saved:"
-      %ul
-        - @quest.errors.full_messages.each do |message|
-          %li= message
+.form-content__main__form
+  = form_for @quest do |f|
+    - if @quest.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@quest.errors.count, "error")} prohibited this quest from being saved:"
+        %ul
+          - @quest.errors.full_messages.each do |message|
+            %li= message
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :price
-    = f.number_field :price
-  -# .field
-  -#   = f.label :user
-  -#   = f.text_field :user
-  .actions
-    = f.submit 'Save'
+    .form-content__main__form__group
+      = f.label :name,"クエスト名:"
+      %br/
+      = f.text_field :name, :placeholder => "(例)おさらふき", autocomplete: "name", class: "form-content__main__form__group__field"
+    .form-content__main__form__group
+      = f.label :description,"クエストのご説明(お子さんにわかるように記載ください):"
+      %br/
+      = f.text_area :description, :placeholder => "(例)ママがあらったおさらをふいて、たなにもどそう！", autocomplete: "name", class: "form-content__main__form__group__field"
+    .form-content__main__form__group
+      = f.label :price,"報酬ポイント:"
+      %br/
+      = f.number_field :price, :placeholder => "(例)500", autocomplete: "name", class: "form-content__main__form__group__field"
+      %br/
+    .form-content__main__form__actions
+      = f.submit 'クエスト登録！',class:"form-content__main__form__actions__button"
+

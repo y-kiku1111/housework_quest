@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
   root to: 'quests#index'
-  resources :quests
-  resources :users, only: :show
 
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
@@ -13,5 +11,8 @@ Rails.application.routes.draw do
     get "sign_in", :to => "users/sessions#new"
     get "sign_out", :to => "users/sessions#destroy" 
   end
+
+  resources :quests
+  resources :users, only: :show
 
 end

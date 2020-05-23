@@ -1,5 +1,8 @@
-%h1 New quest
-
-= render 'form'
-
-= link_to 'Back', quests_path
+.form-wrapper
+  = render "/partial/header"
+  %main.form-content
+    %h2.form-content__head 新規クエストの登録
+    .form-content__main 
+      = render 'form'
+      = link_to 'Back', quests_path
+      = render "/partial/footer"

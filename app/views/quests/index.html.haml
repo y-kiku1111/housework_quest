@@ -18,26 +18,7 @@
     %link{:href => "css/styles.css", :rel => "stylesheet"}/
   %body#page-top
     / Navigation
-    %nav#mainNav.navbar.navbar-expand-lg.navbar-dark.fixed-top
-      .container
-        %a.navbar-brand.js-scroll-trigger{href: "#page-top"}
-          %img{src: "/navbar-logo.png",class: "image_logo"}/
-        %button.navbar-toggler.navbar-toggler-right{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
-          Menu
-          %i.fas.fa-bars.ml-1
-        #navbarResponsive.collapse.navbar-collapse
-          %ul.navbar-nav.text-uppercase.ml-auto
-            - if user_signed_in?
-              %li.nav-item
-                = link_to 'ログアウト', destroy_user_session_path, method: :delete,class:'nav-link.js-scroll-trigger'
-                -# = link_to root_path, data-method:"delete"
-                -# %a.nav-link.js-scroll-trigger{href: "/users/sign_out", method: "delete"} ログアウト
-              %li.nav-item
-                %a.nav-link.js-scroll-trigger{href: "/quests/new"} 新規クエスト作成
-
-            - else
-              %li.nav-item
-                %a.nav-link.js-scroll-trigger{href: "/users/sign_in"} ログイン
+  = render "/partial/navi"
 
   - if user_signed_in?
   - else

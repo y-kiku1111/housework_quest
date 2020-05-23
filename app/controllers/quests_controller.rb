@@ -70,6 +70,6 @@ class QuestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def quest_params
-      params.require(:quest).permit(:name, :description, :price, :user_id)
+      params.require(:quest).permit(:name, :description, :price).merge(user_id: current_user.id)
     end
 end
