@@ -1,27 +1,316 @@
-%h1 Listing quests
+!!!
+%html{:lang => "ja"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    %title Agency - Start Bootstrap Theme
+    %link{:href => "/favicon.ico", :rel => "icon", :type => "image/x-icon"}/
+    / Font Awesome icons (free version)
+    %script{:crossorigin => "anonymous", :src => "https://use.fontawesome.com/releases/v5.12.1/js/all.js"}
+    / Google fonts
+    %link{:href => "https://fonts.googleapis.com/css?family=Montserrat:400,700", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700", :rel => "stylesheet", :type => "text/css"}/
+    / Core theme CSS (includes Bootstrap)
+    %link{:href => "css/styles.css", :rel => "stylesheet"}/
+  %body#page-top
+    / Navigation
+    %nav#mainNav.navbar.navbar-expand-lg.navbar-dark.fixed-top
+      .container
+        %a.navbar-brand.js-scroll-trigger{href: "#page-top"}
+          %img{src: "/navbar-logo.png",class: "image_logo"}/
+        %button.navbar-toggler.navbar-toggler-right{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
+          Menu
+          %i.fas.fa-bars.ml-1
+        #navbarResponsive.collapse.navbar-collapse
+          %ul.navbar-nav.text-uppercase.ml-auto
+            - if user_signed_in?
+              %li.nav-item
+                = link_to 'ログアウト', destroy_user_session_path, method: :delete,class:'nav-link.js-scroll-trigger'
+                -# = link_to root_path, data-method:"delete"
+                -# %a.nav-link.js-scroll-trigger{href: "/users/sign_out", method: "delete"} ログアウト
+              %li.nav-item
+                %a.nav-link.js-scroll-trigger{href: "/quests/new"} 新規クエスト作成
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Description
-      %th Price
-      -# %th User
-      %th
-      %th
-      %th
+            - else
+              %li.nav-item
+                %a.nav-link.js-scroll-trigger{href: "/users/sign_in"} ログイン
 
-  %tbody
-    - @quests.each do |quest|
-      %tr
-        %td= quest.name
-        %td= quest.description
-        %td= quest.price
-        -# %td= quest.user
-        %td= link_to 'Show', quest
-        %td= link_to 'Edit', edit_quest_path(quest)
-        %td= link_to 'Destroy', quest, method: :delete, data: { confirm: 'Are you sure?' }
+  - if user_signed_in?
+  - else
+    / Masthead
+    %header.masthead
+      .container
+        .masthead-subheading お子さんに家事を楽しく手伝ってもらおう♪
+        .masthead-heading.text-uppercase House Work Quest
+        %a.btn.btn-primary.btn-xl.text-uppercase.js-scroll-trigger{href: "/users/sign_up"} 新規会員登録
 
-%br
-
-= link_to 'New Quest', new_quest_path
+    / Footer
+    %footer.footer.py-4
+      .container
+        .row.align-items-center
+          .col-lg-4.text-lg-left Copyright © House Work Quest 2020
+          .col-lg-4.my-3.my-lg-0
+            %a.btn.btn-dark.btn-social.mx-2{:href => "#!"}
+              %i.fab.fa-twitter
+            %a.btn.btn-dark.btn-social.mx-2{:href => "#!"}
+              %i.fab.fa-facebook-f
+            %a.btn.btn-dark.btn-social.mx-2{:href => "#!"}
+              %i.fab.fa-linkedin-in
+          .col-lg-4.text-lg-right
+            %a.mr-3{:href => "#!"} Privacy Policy
+ 
+    / Services
+    -# %section#services.page-section
+    -#   .container
+    -#     .text-center
+    -#       %h2.section-heading.text-uppercase Services
+    -#       %h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+    -#     .row.text-center
+    -#       .col-md-4
+    -#         %span.fa-stack.fa-4x
+    -#           %i.fas.fa-circle.fa-stack-2x.text-primary
+    -#           %i.fas.fa-shopping-cart.fa-stack-1x.fa-inverse
+    -#         %h4.my-3 E-Commerce
+    -#         %p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+    -#       .col-md-4
+    -#         %span.fa-stack.fa-4x
+    -#           %i.fas.fa-circle.fa-stack-2x.text-primary
+    -#           %i.fas.fa-laptop.fa-stack-1x.fa-inverse
+    -#         %h4.my-3 Responsive Design
+    -#         %p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+    -#       .col-md-4
+    -#         %span.fa-stack.fa-4x
+    -#           %i.fas.fa-circle.fa-stack-2x.text-primary
+    -#           %i.fas.fa-lock.fa-stack-1x.fa-inverse
+    -#         %h4.my-3 Web Security
+    -#         %p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+    / Portfolio Grid
+  - if user_signed_in?
+    %section#portfolio.page-section.bg-light
+      .container
+        .text-center
+          %h2.section-heading.text-uppercase きょうのクエスト
+          %h3.section-subheading.text-muted お手伝いクエストを選んでね♪
+        .row
+          .col-lg-4.col-sm-6.mb-4
+            .portfolio-item
+              %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal1"}
+                .portfolio-hover
+                  .portfolio-hover-content
+                    %i.fas.fa-plus.fa-3x
+                %img.img-fluid{:alt => "", :src => "/araimono.png"}/
+              .portfolio-caption
+                .portfolio-caption-heading あらいもの
+                .portfolio-caption-subheading.text-muted 500えん
+          .col-lg-4.col-sm-6.mb-4
+            .portfolio-item
+              %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal2"}
+                .portfolio-hover
+                  .portfolio-hover-content
+                    %i.fas.fa-plus.fa-3x
+                %img.img-fluid{:alt => "", :src => "/osouji.png"}/
+              .portfolio-caption
+                .portfolio-caption-heading おそうじ
+                .portfolio-caption-subheading.text-muted 500えん
+          .col-lg-4.col-sm-6.mb-4
+            .portfolio-item
+              %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal3"}
+                .portfolio-hover
+                  .portfolio-hover-content
+                    %i.fas.fa-plus.fa-3x
+                %img.img-fluid{:alt => "", :src => "/okataduke.png"}/
+              .portfolio-caption
+                .portfolio-caption-heading おかたづけ
+                .portfolio-caption-subheading.text-muted 500えん
+          .col-lg-4.col-sm-6.mb-4.mb-lg-0
+            .portfolio-item
+              %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal4"}
+                .portfolio-hover
+                  .portfolio-hover-content
+                    %i.fas.fa-plus.fa-3x
+                %img.img-fluid{:alt => "", :src => "osarafuki.png"}/
+              .portfolio-caption
+                .portfolio-caption-heading おさらふき
+                .portfolio-caption-subheading.text-muted 500えん
+          .col-lg-4.col-sm-6.mb-4.mb-sm-0
+            .portfolio-item
+              %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal5"}
+                .portfolio-hover
+                  .portfolio-hover-content
+                    %i.fas.fa-plus.fa-3x
+                %img.img-fluid{:alt => "", :src => "/kata.png"}/
+              .portfolio-caption
+                .portfolio-caption-heading Southwest
+                .portfolio-caption-subheading.text-muted Website Design
+          .col-lg-4.col-sm-6
+            .portfolio-item
+              %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal6"}
+                .portfolio-hover
+                  .portfolio-hover-content
+                    %i.fas.fa-plus.fa-3x
+                %img.img-fluid{:alt => "", :src => "/ofurosouji.png"}/
+              .portfolio-caption
+                .portfolio-caption-heading Window
+                .portfolio-caption-subheading.text-muted Photography
+    / Footer
+    %footer.footer.py-4
+      .container
+        .row.align-items-center
+          .col-lg-4.text-lg-left Copyright © Your Website 2020
+          .col-lg-4.my-3.my-lg-0
+            %a.btn.btn-dark.btn-social.mx-2{:href => "#!"}
+              %i.fab.fa-twitter
+            %a.btn.btn-dark.btn-social.mx-2{:href => "#!"}
+              %i.fab.fa-facebook-f
+            %a.btn.btn-dark.btn-social.mx-2{:href => "#!"}
+              %i.fab.fa-linkedin-in
+          .col-lg-4.text-lg-right
+            %a.mr-3{:href => "#!"} Privacy Policy
+            %a{:href => "#!"} Terms of Use
+    / Portfolio Modals
+    / Modal 1
+    #portfolioModal1.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog
+        .modal-content
+          .close-modal{"data-dismiss" => "modal"}
+            %img{:src => "/close-icon.svg"}/
+          .container
+            .row.justify-content-center
+              .col-lg-8
+                .modal-body
+                  / Project Details Go Here
+                  %h2.text-uppercase Project Name
+                  %p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+                  %img.img-fluid.d-block.mx-auto{:alt => "", :src => "/araimono.png"}/
+                  %p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
+                  %ul.list-inline
+                    %li Date: January 2020
+                    %li Client: Threads
+                    %li Category: Illustration
+                  %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
+                    %i.fas.fa-times.mr-1>
+                    Close Project
+    / Modal 2
+    #portfolioModal2.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog
+        .modal-content
+          .close-modal{"data-dismiss" => "modal"}
+            %img{:src => "/close-icon.svg"}/
+          .container
+            .row.justify-content-center
+              .col-lg-8
+                .modal-body
+                  / Project Details Go Here
+                  %h2.text-uppercase Project Name
+                  %p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+                  %img.img-fluid.d-block.mx-auto{:alt => "", :src => "/osouji.png"}/
+                  %p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
+                  %ul.list-inline
+                    %li Date: January 2020
+                    %li Client: Explore
+                    %li Category: Graphic Design
+                  %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
+                    %i.fas.fa-times.mr-1>
+                    Close Project
+    / Modal 3
+    #portfolioModal3.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog
+        .modal-content
+          .close-modal{"data-dismiss" => "modal"}
+            %img{:src => "/close-icon.svg"}/
+          .container
+            .row.justify-content-center
+              .col-lg-8
+                .modal-body
+                  / Project Details Go Here
+                  %h2.text-uppercase Project Name
+                  %p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+                  %img.img-fluid.d-block.mx-auto{:alt => "", :src => "/okataduke.png"}/
+                  %p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
+                  %ul.list-inline
+                    %li Date: January 2020
+                    %li Client: Finish
+                    %li Category: Identity
+                  %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
+                    %i.fas.fa-times.mr-1>
+                    Close Project
+    / Modal 4
+    #portfolioModal4.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog
+        .modal-content
+          .close-modal{"data-dismiss" => "modal"}
+            %img{:src => "/close-icon.svg"}/
+          .container
+            .row.justify-content-center
+              .col-lg-8
+                .modal-body
+                  / Project Details Go Here
+                  %h2.text-uppercase Project Name
+                  %p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+                  %img.img-fluid.d-block.mx-auto{:alt => "", :src => "osarafuki.png"}/
+                  %p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
+                  %ul.list-inline
+                    %li Date: January 2020
+                    %li Client: Lines
+                    %li Category: Branding
+                  %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
+                    %i.fas.fa-times.mr-1>
+                    Close Project
+    / Modal 5
+    #portfolioModal5.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog
+        .modal-content
+          .close-modal{"data-dismiss" => "modal"}
+            %img{:src => "/close-icon.svg"}/
+          .container
+            .row.justify-content-center
+              .col-lg-8
+                .modal-body
+                  / Project Details Go Here
+                  %h2.text-uppercase Project Name
+                  %p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+                  %img.img-fluid.d-block.mx-auto{:alt => "", :src => "/kata.png"}/
+                  %p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
+                  %ul.list-inline
+                    %li Date: January 2020
+                    %li Client: Southwest
+                    %li Category: Website Design
+                  %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
+                    %i.fas.fa-times.mr-1>
+                    Close Project
+    / Modal 6
+    #portfolioModal6.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog
+        .modal-content
+          .close-modal{"data-dismiss" => "modal"}
+            %img{:src => "/close-icon.svg"}/
+          .container
+            .row.justify-content-center
+              .col-lg-8
+                .modal-body
+                  / Project Details Go Here
+                  %h2.text-uppercase Project Name
+                  %p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+                  %img.img-fluid.d-block.mx-auto{:alt => "", :src => "/ofurosouji.png"}/
+                  %p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
+                  %ul.list-inline
+                    %li Date: January 2020
+                    %li Client: Window
+                    %li Category: Photography
+                  %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
+                    %i.fas.fa-times.mr-1>
+                    Close Project
+    / Bootstrap core JS
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
+    %script{:src => "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"}
+    / Third party plugin JS
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"}
+    / Contact form JS
+    %script{:src => "assets/mail/jqBootstrapValidation.js"}
+    %script{:src => "assets/mail/contact_me.js"}
+    / Core theme JS
+    %script{:src => "js/scripts.js"}
