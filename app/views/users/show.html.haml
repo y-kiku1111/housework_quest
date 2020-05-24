@@ -18,15 +18,22 @@
               .portfolio-hover
                 .portfolio-hover-content
                   %i.fas.fa-plus.fa-3x
-              %img.img-fluid{:alt => "", :src => "/araimono.png"}/
+              %img.img-fluid{alt: "", src: "/sample01.png",class: "img1"}/
             .portfolio-caption
               .portfolio-caption-heading
                 %span.name= quest.name
               .portfolio-caption-subheading.text-muted
                 %span.name= quest.price
+                %br/
+                %button.button1 画像変更
+                %br/
+                %button.button2 画像戻す
+                %img.img-fluid{alt: "", src: "/sample01.png",class: "img1"}/
 
-        -# / Portfolio Modals
-        -# / Modal 1
+  %script{src: "js/img.js"}
+
+        / Portfolio Modals
+        / Modal 1
         -# #portfolioModal1.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
         -#   .modal-dialog
         -#     .modal-content
@@ -62,4 +69,10 @@
     -# %script{:src => "assets/mail/contact_me.js"}
     -# / Core theme JS
     -# %script{:src => "js/scripts.js"}
+
+
+    -# %script{:src => "https://code.jquery.com/jquery-3.2.1.min.js"}
+
+
+    
 
