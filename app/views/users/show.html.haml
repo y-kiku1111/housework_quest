@@ -11,67 +11,113 @@
       %br/
       
     .row
+    .col-lg-4.col-sm-6.mb-4
+      .portfolio-item
+        %a.portfolio-link
+          .portfolio-hover
+            .portfolio-hover-content
+              %i.fas.fa-plus.fa-3x
+          %img.img-1{alt: "", src: "/house_work/osouji.png"}/
+        .portfolio-caption
+          .portfolio-caption-heading
+            %span.name おそうじ
+          .portfolio-caption-subheading.text-muted
+            %span.name 100円
+            %br/
+            %button.button1 クエストクリア！
+
+    .col-lg-4.col-sm-6.mb-4
+      .portfolio-item
+        %a.portfolio-link
+          .portfolio-hover
+            .portfolio-hover-content
+              %i.fas.fa-plus.fa-3x
+          %img.img-2{alt: "", src: "/house_work/araimono.png"}/
+        .portfolio-caption
+          .portfolio-caption-heading
+            %span.name あらいもの
+          .portfolio-caption-subheading.text-muted
+            %span.name 100円
+            %br/
+            %button.button2 クエストクリア！
+
+    .col-lg-4.col-sm-6.mb-4
+      .portfolio-item
+        %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal1"}
+          .portfolio-hover
+            .portfolio-hover-content
+              %i.fas.fa-plus.fa-3x
+          %img.img-3{alt: "", src: "/house_work/osarafuki.png"}/
+        .portfolio-caption
+          .portfolio-caption-heading
+            %span.name お皿ふき
+          .portfolio-caption-subheading.text-muted
+            %span.name 100円
+            %br/
+            %button.button3 クエストクリア！
+
+    .col-lg-4.col-sm-6.mb-4
+      .portfolio-item
+        %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal1"}
+          .portfolio-hover
+            .portfolio-hover-content
+              %i.fas.fa-plus.fa-3x
+          %img.img-4{alt: "", src: "/house_work/ofurosouji.png"}/
+        .portfolio-caption
+          .portfolio-caption-heading
+            %span.name おふろそうじ
+          .portfolio-caption-subheading.text-muted
+            %span.name 100円
+            %br/
+            %button.button4 クエストクリア！
+
+    .col-lg-4.col-sm-6.mb-4
+      .portfolio-item
+        %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal1"}
+          .portfolio-hover
+            .portfolio-hover-content
+              %i.fas.fa-plus.fa-3x
+          %img.img-5{alt: "", src: "/house_work/kataduke.png"}/
+        .portfolio-caption
+          .portfolio-caption-heading
+            %span.name お片づけ
+          .portfolio-caption-subheading.text-muted
+            %span.name 100円
+            %br/
+            %button.button5 クエストクリア！
+
+    .col-lg-4.col-sm-6.mb-4
+      .portfolio-item
+        %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal1"}
+          .portfolio-hover
+            .portfolio-hover-content
+              %i.fas.fa-plus.fa-3x
+          %img.img-6{alt: "", src: "/house_work/kata.png"}/
+        .portfolio-caption
+          .portfolio-caption-heading
+            %span.name 肩たたき
+          .portfolio-caption-subheading.text-muted
+            %span.name 100円
+            %br/
+            %button.button6 クエストクリア！
+
+    .col-lg-4.col-sm-6.mb-4
       - @quests.each do |quest|
-        .col-lg-4.col-sm-6.mb-4
-          .portfolio-item
-            %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal1"}
-              .portfolio-hover
-                .portfolio-hover-content
-                  %i.fas.fa-plus.fa-3x
-              %img.img-fluid{alt: "", src: "/sample01.png",class: "img1"}/
-            .portfolio-caption
-              .portfolio-caption-heading
-                %span.name= quest.name
-              .portfolio-caption-subheading.text-muted
-                %span.name= quest.price
-                %br/
-                %button.button1 画像変更
-                %br/
-                %button.button2 画像戻す
-                %img.img-fluid{alt: "", src: "/sample01.png",class: "img1"}/
-
-  %script{src: "js/img.js"}
-
-        / Portfolio Modals
-        / Modal 1
-        -# #portfolioModal1.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
-        -#   .modal-dialog
-        -#     .modal-content
-        -#       .close-modal{"data-dismiss" => "modal"}
-        -#         %img{:src => "/close-icon.svg"}/
-        -#       .container
-        -#         .row.justify-content-center
-        -#           .col-lg-8
-        -#             .modal-body
-        -#               / Project Details Go Here
-        -#               %h2.text-uppercase
-        -#                 = quest.name
-        -#               %p.item-intro.text-muted
-        -#                 = quest.description
-        -#               %img.img-fluid.d-block.mx-auto{:alt => "", :src => "/araimono.png"}/
-        -#               %p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
-        -#               %ul.list-inline
-        -#                 %li Date: January 2020
-        -#                 %li Client: Threads
-        -#                 %li Category: Illustration
-        -#               %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
-        -#                 %i.fas.fa-times.mr-1>
-        -#                 Close Project
+        .portfolio-item
+          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal1"}
+            .portfolio-hover
+              .portfolio-hover-content
+                %i.fas.fa-plus.fa-3x
+            %img.img-shinki{alt: "", src: "/house_work/osouji.png"}/
+          .portfolio-caption
+            .portfolio-caption-heading
+              %span.name= quest.name
+            .portfolio-caption-subheading.text-muted
+              %span.name= quest.price
+              %br/
+              %button.button-shinki クエストクリア！
 
 
-    -# / Bootstrap core JS
-    -# %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
-    -# %script{:src => "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"}
-    -# / Third party plugin JS
-    -# %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"}
-    -# / Contact form JS
-    -# %script{:src => "assets/mail/jqBootstrapValidation.js"}
-    -# %script{:src => "assets/mail/contact_me.js"}
-    -# / Core theme JS
-    -# %script{:src => "js/scripts.js"}
-
-
-    -# %script{:src => "https://code.jquery.com/jquery-3.2.1.min.js"}
 
 
     
