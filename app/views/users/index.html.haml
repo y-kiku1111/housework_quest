@@ -1,30 +1,46 @@
 = render "/partial/navi"
 
-/ Services
-%section#services.page-section
-  .container
-    .text-center
-      %h2.section-heading.text-uppercase このアプリで出来ること
-      %h3.section-subheading.text-muted 家事を「クエスト」として任せることで、お子さんに楽しく家事を手伝ってもらえます♪
-    .row.text-center
-      .col-md-4
-        %span.fa-stack.fa-4x
-          %i.fas.fa-circle.fa-stack-2x.text-primary
-          %i.fas.fa-shopping-cart.fa-stack-1x.fa-inverse
-        %h4.my-3 ①任せたいクエストを選ぼう！
-        %p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
-      .col-md-4
-        %span.fa-stack.fa-4x
-          %i.fas.fa-circle.fa-stack-2x.text-primary
-          %i.fas.fa-laptop.fa-stack-1x.fa-inverse
-        %h4.my-3 ②クエストの報酬を決めよう！
-        %p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
-      .col-md-4
-        %span.fa-stack.fa-4x
-          %i.fas.fa-circle.fa-stack-2x.text-primary
-          %i.fas.fa-lock.fa-stack-1x.fa-inverse
-        %h4.my-3 ③お子さんにクエストを選んでもらおう！
-        %p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+
+.index-main
+  %section#services.page-section
+    .container
+      .text-center
+        %h2.section-heading.text-uppercase このアプリで出来ること
+        %h3.section-subheading.text-muted 家事を「クエスト」として任せることで、お子さんに楽しく家事を手伝ってもらえます♪
+        %br/
+      .row.text-center
+        .col-md-4
+          %span.fa-stack.fa-4x
+            %i.fas.fa-circle.fa-stack-2x.text-primary
+            %i.fas.fa-laptop.fa-stack-1x.fa-inverse
+
+          %h4.my-3 任せたいクエスト(家事)を選ぼう！
+          %p.quest-text 初めから6つのクエストが登録されています。
+          %p.quest-text 新規クエスト追加から好きなクエストを追加することも！
+          %p.quest-text さあ、お子さんに任せたい家事を選びましょう。
+        .col-md-4
+          %span.fa-stack.fa-4x
+            %i.fas.fa-circle.fa-stack-2x.text-primary
+            %i.fas.fa-lock.fa-stack-1x.fa-inverse
+          %h4.my-3 クエストをクリアしたら？
+          %p.quest-text 「クエストクリア」ボタンを押させてみよう！
+          %p.quest-text 画像がクエストクリア表示に切り替わります。
+          %p.quest-text クリアできたら、しっかりと褒めてあげましょう♪
+        .col-md-4
+          %span.fa-stack.fa-4x
+            %i.fas.fa-circle.fa-stack-2x.text-primary
+            %i.fas.fa-shopping-cart.fa-stack-1x.fa-inverse
+          %h4.my-3 クエストのご褒美を決めよう！
+          %p.quest-text 初期設定クエストは全て報酬が１００ポイント！
+          %p.quest-text ポイントがいくつ溜まったらご褒美を！
+          %p.quest-text お子さんにどんなあげるか決めましょう♪
+
+      .text-center
+        .quest-link1
+        = link_to user_path(current_user.id) do
+          = image_tag "/sentaku.gif",class: "quest-link"
+
+
 
 
 

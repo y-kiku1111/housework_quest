@@ -3,10 +3,13 @@
 
 / Masthead
 %header.masthead
+  -# - if user_signed_in?
   .container
     .masthead-subheading お子さんに家事を楽しく手伝ってもらおう♪
     .masthead-heading.text-uppercase House Work Quest
     %a.btn.btn-primary.btn-xl.text-uppercase.js-scroll-trigger{href: "/users/sign_up"} 新規会員登録
+  -# - else
+  -#   = redirect to users_path
 
 / Footer
 = render "/partial/footer"

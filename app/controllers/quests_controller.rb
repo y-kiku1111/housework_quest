@@ -5,7 +5,11 @@ class QuestsController < ApplicationController
   # GET /quests
   # GET /quests.json
   def index
+    if user_signed_in?
+      redirect_to users_path
+    else
     @quests = Quest.all
+    end
   end
 
   # GET /quests/1
@@ -25,11 +29,12 @@ class QuestsController < ApplicationController
   # POST /quests
   # POST /quests.json
   def create
+
     @quest = Quest.new(quest_params)
 
     respond_to do |format|
       if @quest.save
-        format.html { redirect_to @quest, notice: 'Quest was successfully created.' }
+        format.html { redirect_to user_path(current_user.id), notice: 'Quest was successfully created.' }
         format.json { render :show, status: :created, location: @quest }
       else
         format.html { render :new }
@@ -70,6 +75,16 @@ class QuestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def quest_params
-      params.require(:quest).permit(:name, :description, :price).merge(user_id: current_user.id)
+      params.require(:quest).permit(:name,:price).merge(user_id: current_user.id)
     end
+
+    def new_guest
+      user = User.find_or_create_by!(email: 'guest@example.com') do |user|
+        user.password = SecureRandom.urlsafe_base64
+      end
+      sign_in user
+      redirect_to users_path, notice: 'ゲストユーザーとしてログインしました。'
+    end
+
+
 end

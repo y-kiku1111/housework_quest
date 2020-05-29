@@ -372,7 +372,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 h3, .h3 {
@@ -6127,9 +6127,10 @@ button.bg-danger:focus {
   background-color: #bd2130 !important;
 }
 
-.bg-light {
-  background-color: #f8f9fa !important;
-}
+// .bg-light {
+//   background-color: #f8f9fa !important;
+
+// }
 
 a.bg-light:hover, a.bg-light:focus,
 button.bg-light:hover,
@@ -9654,6 +9655,7 @@ button.bg-dark:focus {
 
 .text-center {
   text-align: center !important;
+
 }
 
 @media (min-width: 576px) {
@@ -9818,6 +9820,8 @@ a.text-dark:hover, a.text-dark:focus {
 
 .text-muted {
   color: #6c757d !important;
+  font-size: 14px;
+  margin:20px 0 40px 0;
 }
 
 .text-black-50 {
@@ -9962,7 +9966,7 @@ p {
 
 @media (min-width: 768px) {
   section {
-    padding: 9rem 0;
+    padding: 10rem 0;
   }
 }
 ::-moz-selection {

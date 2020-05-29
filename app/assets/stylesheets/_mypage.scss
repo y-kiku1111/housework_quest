@@ -34,7 +34,7 @@
   height: auto;
 }
 
-.button {
+button {
   display: inline-block;
   max-width: 180px;
   text-align: left;
@@ -48,8 +48,12 @@
   transition: .4s;
 }
 
-.button:hover {
+button:hover {
   background-color: #9ec34b;
   border-color: #cbe585;
   color: #FFF;
+}
+
+.main-quest{
+  
 }
