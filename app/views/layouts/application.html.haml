@@ -1,14 +1,21 @@
 !!!
-%html
+%html{lang: "ja"}
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{charset: "utf-8"}/
+    %meta{content: "width=device-width, initial-scale=1, shrink-to-fit=no", name: "viewport"}/
+    %meta{content: "", name: "description"}/
+    %meta{content: "", name: "author"}/
     %title HouseworkQuest
+    %link{href: "/favicon.ico", rel: "icon", type: "image/x-icon"}/
+    / Font Awesome icons (free version)
+    %script{crossorigin: "anonymous", src: "https://use.fontawesome.com/releases/v5.12.1/js/all.js"}
+
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
 
 
-
-  %body
+  %body#page-top
     = yield

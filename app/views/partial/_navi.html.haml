@@ -1,0 +1,21 @@
+%nav#mainNav.navbar.navbar-expand-lg.navbar-dark.fixed-top
+  .container
+    %a.navbar-brand.js-scroll-trigger{href: "#page-top"}
+      %img{src: "/navbar-logo.png",class: "image_logo"}/
+    %button.navbar-toggler.navbar-toggler-right{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
+      Menu
+      %i.fas.fa-bars.ml-1
+    #navbarResponsive.collapse.navbar-collapse
+      %ul.navbar-nav.text-uppercase.ml-auto
+        - if user_signed_in?
+          %li.nav-item
+            = link_to current_user.nickname, "/users/#{current_user.id}", class:'nav-link'
+          %li.nav-item
+            = link_to "クエストの新規作成", new_quest_path, class:'nav-link'   
+          %li.nav-item
+            %a= link_to'ログアウト', destroy_user_session_path, method: :delete, class:'nav-link'       
+        - else
+          %li.nav-item
+            %a= link_to'ログイン', sign_in_path, class:'nav-link'
+          %li.nav-item
+            %a= link_to'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class:'nav-link'

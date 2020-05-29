@@ -1,0 +1,147 @@
+- title = "クエスト："
+- point = "ほうしゅう："
+
+
+= render "/partial/navi"
+
+.show-main
+  %section#portfolio.page-section.bg-light
+    .container
+      .text-center
+        %h2.section-heading.text-uppercase きょうのクエスト
+        %h3.section-subheading.text-muted 好きなお手伝いを選んでね♪      
+
+      .col-lg-4.col-sm-6.mb-4
+        .portfolio-item
+          %a.portfolio-link
+            .portfolio-hover
+              .portfolio-hover-content
+                %i.fas.fa-plus.fa-3x
+            %img.img-1{alt: "", src: "/house_work/osouji.png"}/
+          .portfolio-caption
+            .portfolio-caption-heading
+              %span.quest__title
+                = title
+              %span.name おそうじ
+            .portfolio-caption-subheading.quest-text
+              %span.quest__title
+                = point
+              %span.name 100 ポイント
+              %button.button1.submit クエストクリア！
+
+      .col-lg-4.col-sm-6.mb-4
+        .portfolio-item
+          %a.portfolio-link
+            .portfolio-hover
+              .portfolio-hover-content
+                %i.fas.fa-plus.fa-3x
+            %img.img-2{alt: "", src: "/house_work/araimono.png"}/
+          .portfolio-caption
+            .portfolio-caption-heading
+              %span.quest__title
+                = title
+              %span.name あらいもの
+            .portfolio-caption-subheading.quest-text
+              %span.quest__title
+                = point
+              %span.name 100 ポイント
+              %button.button2 クエストクリア！
+
+      .col-lg-4.col-sm-6.mb-4
+        .portfolio-item
+          %a.portfolio-link
+            .portfolio-hover
+              .portfolio-hover-content
+                %i.fas.fa-plus.fa-3x
+            %img.img-3{alt: "", src: "/house_work/osarafuki.png"}/
+          .portfolio-caption
+            .portfolio-caption-heading
+              %span.quest__title
+                = title
+              %span.name お皿ふき
+            .portfolio-caption-subheading.quest-text
+              %span.quest__title
+                = point
+              %span.name 100 ポイント
+              %button.button3 クエストクリア！
+
+      .col-lg-4.col-sm-6.mb-4
+        .portfolio-item
+          %a.portfolio-link
+            .portfolio-hover
+              .portfolio-hover-content
+                %i.fas.fa-plus.fa-3x
+            %img.img-4{alt: "", src: "/house_work/ofurosouji.png"}/
+          .portfolio-caption
+            .portfolio-caption-heading
+              %span.quest__title
+                = title
+              %span.name おふろそうじ
+            .portfolio-caption-subheading.quest-text
+              %span.quest__title
+                = point 
+              %span.name 100 ポイント
+              %button.button4 クエストクリア！
+
+      .col-lg-4.col-sm-6.mb-4
+        .portfolio-item
+          %a.portfolio-link
+            .portfolio-hover
+              .portfolio-hover-content
+                %i.fas.fa-plus.fa-3x
+            %img.img-5{alt: "", src: "/house_work/kataduke.png"}/
+          .portfolio-caption
+            .portfolio-caption-heading
+              %span.quest__title
+                = title
+              %span.name お片づけ
+            .portfolio-caption-subheading.quest-text
+              %span.quest__title
+                = point 
+              %span.name 100 ポイント
+              %button.button5 クエストクリア！
+
+      .col-lg-4.col-sm-6.mb-4
+        .portfolio-item
+          %a.portfolio-link
+            .portfolio-hover
+              .portfolio-hover-content
+                %i.fas.fa-plus.fa-3x
+            %img.img-6{alt: "", src: "/house_work/kata.png"}/
+          .portfolio-caption
+            .portfolio-caption-heading
+              %span.quest__title
+                = title
+              %span.name 肩たたき
+            .portfolio-caption-subheading.quest-text
+              %span.quest__title
+                = point 
+              %span.name 100 ポイント
+              %button.button6 クエストクリア！
+
+      - @quests.each do |quest|
+        .col-lg-4.col-sm-6.mb-4
+          .portfolio-item
+            %a.portfolio-link
+              .portfolio-hover
+                .portfolio-hover-content
+                  %i.fas.fa-plus.fa-3x
+              %img.img-shinki{alt: "", src: "/house_work/homeru.png"}/
+            .portfolio-caption
+              .portfolio-caption-heading
+                %span.quest__title
+                  = title
+                %span.name= quest.name
+              .portfolio-caption-subheading.quest-text
+                %span.quest__title
+                  = point 
+                %span.name= quest.price
+                %span.name ポイント
+                %button.button-shinki クエストクリア！
+
+
+
+
+
+    
+

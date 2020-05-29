@@ -12,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     @user.save!
     sign_in(:user, @user)
-    redirect_to root_path and return
+    redirect_to users_path and return
   end
 
 end
