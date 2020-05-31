@@ -1,24 +1,53 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#House Work Quest
 
-Things you may want to cover:
+このアプリは、お子さんに「家事を楽しく手伝ってもらう事」を目的としたアプリです。
 
-* Ruby version
+#本番環境
+URL:http://18.181.137.208/
 
-* System dependencies
+閲覧の際は、通常のユーザー登録・ログイン機能によるご確認のほか、
+ログインページの「簡単ログイン」ボタンから、テストユーザーアカウントによるご確認もご利用いただけます。
 
-* Configuration
+#機能一覧:
 
-* Database creation
+##クエスト
+- クエストの新規投稿機能
+- クエストの完了報告機能
 
-* Database initialization
+##ユーザー
+- 認証機能
+- 簡単ログイン機能
+- マイページ機能
 
-* How to run the test suite
+#テスト
+- ユーザー機能での単体テスト
 
-* Services (job queues, cache servers, search engines, etc.)
+#使用技術一覧:
+- Sass(scss)
+- Hmal
+- HTML/CSS
+- Javascript / jQuery
 
-* Deployment instructions
+##開発環境
+- ruby 2.5.1
+- Rails 5.2.3
 
-* ...
+##インフラ
+- AWS(EC2)、MySQL2、Nginx(WEBサーバ)
+- Capistrano
+
+#今後について
+今後、順次実装していきます。
+
+##実装予定の機能
+- 画像投稿機能
+- 各SNSログイン機能
+- 報酬ポイントを計算する機能
+- クエスト完了後の評価機能
+
+##テスト
+- CircleCI
+- 結合テスト
+
+
