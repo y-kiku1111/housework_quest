@@ -55,5 +55,4 @@ URL:http://18.181.137.208/
 ## テスト
 - CircleCI
 - 結合テスト
-
-
+- rubocop
