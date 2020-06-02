@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class QuestsControllerTest < ActionDispatch::IntegrationTest
@@ -5,17 +7,17 @@ class QuestsControllerTest < ActionDispatch::IntegrationTest
     @quest = quests(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get quests_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_quest_url
     assert_response :success
   end
 
-  test "should create quest" do
+  test 'should create quest' do
     assert_difference('Quest.count') do
       post quests_url, params: { quest: { description: @quest.description, name: @quest.name, price: @quest.price, user_id: @quest.user_id } }
     end
@@ -23,22 +25,22 @@ class QuestsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to quest_url(Quest.last)
   end
 
-  test "should show quest" do
+  test 'should show quest' do
     get quest_url(@quest)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_quest_url(@quest)
     assert_response :success
   end
 
-  test "should update quest" do
+  test 'should update quest' do
     patch quest_url(@quest), params: { quest: { description: @quest.description, name: @quest.name, price: @quest.price, user_id: @quest.user_id } }
     assert_redirected_to quest_url(@quest)
   end
 
-  test "should destroy quest" do
+  test 'should destroy quest' do
     assert_difference('Quest.count', -1) do
       delete quest_url(@quest)
     end

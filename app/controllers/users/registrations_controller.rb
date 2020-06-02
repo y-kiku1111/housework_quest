@@ -1,5 +1,6 @@
-class Users::RegistrationsController < Devise::RegistrationsController
+# frozen_string_literal: true
 
+class Users::RegistrationsController < Devise::RegistrationsController
   def new
     @user = User.new
   end
@@ -14,5 +15,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
     sign_in(:user, @user)
     redirect_to users_path and return
   end
-
 end
