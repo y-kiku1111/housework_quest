@@ -69,6 +69,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
 
   gem 'capistrano'
   gem 'capistrano-bundler'
