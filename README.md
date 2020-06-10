@@ -1,9 +1,10 @@
 
 # House Work Quest
 このアプリは、お子さんに「家事を楽しく手伝ってもらう事」を目的としたアプリです。
+![top](https://user-images.githubusercontent.com/63326271/84291890-ab84eb80-ab80-11ea-98df-bb8050bd6519.jpg)
 
 # 使い方
-![610f25a7ed8adf27d030ec98e3a81f6a](https://user-images.githubusercontent.com/63326271/83354901-c7c1a500-a396-11ea-8050-ccca10ce4333.png)
+![4f50c4cff3a77e312dba38c37fa9b12f](https://user-images.githubusercontent.com/63326271/84291012-7b891880-ab7f-11ea-84c8-fc33ca381eeb.gif)
 
 こちらのマイページをお子さんに見せて、クエスト(お手伝いしたい家事)を
 決めてもらいます。
@@ -26,6 +27,15 @@ URL:http://18.181.137.208/
 - 簡単ログイン機能
 - マイページ機能
 
+## アプリケーション構成図
+![houseworkquest](https://user-images.githubusercontent.com/63326271/84290118-4203dd80-ab7e-11ea-927d-85d4b9b66937.jpg)
+
+## インフラ
+- AWS(EC2)
+- MySQL2
+- Nginx(WEBサーバ)
+- Capistrano(自動デプロイ)
+
 # テスト
 - モデル、コントローラーでの単体テスト(6/9実装)
 - rubocop(6/2実装)
@@ -39,12 +49,6 @@ URL:http://18.181.137.208/
 ## 開発環境
 - ruby 2.5.1
 - Rails 5.2.3
-
-## インフラ
-- AWS(EC2)
-- MySQL2
-- Nginx(WEBサーバ)
-- Capistrano(自動デプロイ)
 
 # 今後について
 今後、順次実装していきます。
