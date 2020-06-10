@@ -2,11 +2,11 @@
 # House Work Quest
 このアプリは、お子さんに「家事を楽しく手伝ってもらう事」を目的としたアプリです。
 
-(https://user-images.githubusercontent.com/63326271/84291890-ab84eb80-ab80-11ea-98df-bb8050bd6519.jpg)
+![top](https://user-images.githubusercontent.com/63326271/84291890-ab84eb80-ab80-11ea-98df-bb8050bd6519.jpg)
 
 
 # 使い方
-(https://user-images.githubusercontent.com/63326271/84291012-7b891880-ab7f-11ea-84c8-fc33ca381eeb.gif)
+![4f50c4cff3a77e312dba38c37fa9b12f](https://user-images.githubusercontent.com/63326271/84291012-7b891880-ab7f-11ea-84c8-fc33ca381eeb.gif)
 
 こちらのマイページをお子さんに見せて、クエスト(お手伝いしたい家事)を
 決めてもらいます。
