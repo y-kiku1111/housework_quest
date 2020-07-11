@@ -29,9 +29,6 @@ URL:http://18.181.137.208/
 - 簡単ログイン機能
 - マイページ機能
 
-## アプリケーション構成図
-![houseworkquest](https://user-images.githubusercontent.com/63326271/84290118-4203dd80-ab7e-11ea-927d-85d4b9b66937.jpg)
-
 ## インフラ
 - AWS(EC2)
 - MySQL2
